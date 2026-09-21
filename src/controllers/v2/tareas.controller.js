@@ -17,7 +17,7 @@ export const createTarea = async(req,res, next) => {
         const tarea = await prisma.tarea.create({
             data:{
                 titulo: req.body.titulo,
-                usuarioID: req.usuario.id
+                usuarioId: req.usuario.id
             }
         });
         res.status(201).json(tarea);

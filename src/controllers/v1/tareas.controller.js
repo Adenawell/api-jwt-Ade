@@ -12,13 +12,13 @@ export const getTareas = async(req,res, next) => {
 }
 
 export const createTarea = async(req,res, next) => {
-    const { titulo, UsuarioID } = req.body;
+    const { titulo, usuarioId } = req.body;
 
     try{
         const tarea = await prisma.tarea.create({
         data:{
             titulo,
-            UsuarioID
+            usuarioId
         }
     })
     res.status(201).json(tarea)
