@@ -1,9 +1,9 @@
 import  express  from "express";
-import v1TareasRoutes  from "./routes/v1/tareas.routes.js";
-import v2TareasRoutes  from "./routes/v2/tareas.routes.js";
-import authRoutes  from "./routes/auth.routes.js";
-import apikeyMiddleware  from "./middlewares/apikey.middleware.js";
-import authMiddleware  from "./middlewares/auth.middleware.js";
+import v1TareasRoutes  from "../routes/v1/tareas.routes.js";
+import v2TareasRoutes  from "../routes/v2/tareas.routes.js";
+import authRoutes  from "../routes/auth.routes.js";
+import apikeyMiddleware  from "../middlewares/apikey.middleware.js";
+import authMiddleware  from "../middlewares/auth.middleware.js";
 
 const app = express();
 app.use(express.json());
