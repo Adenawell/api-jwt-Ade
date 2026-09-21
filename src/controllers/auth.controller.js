@@ -1,6 +1,6 @@
 import jwt  from "jsonwebtoken";
 import bcrypt  from "bcryptjs";
-import  { prisma }  from "../db.js";
+import  prisma   from "../db.js";
 
 const registro = async(req,res,next) => {
     try{

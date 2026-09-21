@@ -1,4 +1,4 @@
-import { prisma } from "../../db.js";
+import  prisma  from "../../db.js";
 
 
 
@@ -22,7 +22,7 @@ const createTarea = async(req,res, next) => {
         }
     })
     res.status(201).json(tarea)
-    
+
     }catch(error){
         next(error);
     }
