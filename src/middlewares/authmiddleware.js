@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 
-const verificarToken = (req, res, next) => {
+export const verificarToken = (req, res, next) => {
 
     try{
         const header = req.headers['authorization'];
@@ -22,7 +22,7 @@ const verificarToken = (req, res, next) => {
     }
 }
 
-const soloAdmin = (req, res, next) => {
+export const soloAdmin = (req, res, next) => {
     try{
         const { rol } = req.usuario;
 
