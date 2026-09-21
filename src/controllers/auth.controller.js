@@ -2,7 +2,7 @@ import jwt  from "jsonwebtoken";
 import bcrypt  from "bcryptjs";
 import  { prisma }   from "../db.js";
 
-const registro = async(req,res,next) => {
+export const registro = async(req,res,next) => {
     try{
         const { nombre, email, password, rol } = req.body;
 
@@ -31,7 +31,7 @@ const registro = async(req,res,next) => {
 }
 
 
-const login = async(req,res,next) => {
+export const login = async(req,res,next) => {
     try{
 
         const { email, password } = req.body;

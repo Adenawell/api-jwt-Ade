@@ -2,7 +2,7 @@ import  { prisma }  from "../../db.js";
 
 
 
-const getTareas = async(req,res, next) => {
+export const getTareas = async(req,res, next) => {
     try{
         const tareas = await prisma.tarea.findMany();
         res.json(tareas);
@@ -11,7 +11,7 @@ const getTareas = async(req,res, next) => {
     }
 }
 
-const createTarea = async(req,res, next) => {
+export const createTarea = async(req,res, next) => {
     const { titulo, UsuarioID } = req.body;
 
     try{

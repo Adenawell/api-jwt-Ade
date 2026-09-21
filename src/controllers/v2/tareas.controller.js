@@ -1,6 +1,6 @@
 import  { prisma }  from "../../db.js";
 
-const getTareas = async(req,res,next) => {
+export const getTareas = async(req,res,next) => {
     try{
         const regla = req.usuario.rol == "admin" ? {} : {usuarioID: req.usuario.id};
         const tareas = await prisma.tarea.findMany({
@@ -12,7 +12,7 @@ const getTareas = async(req,res,next) => {
     }
 }
 
-const createTarea = async(req,res, next) => {
+export const createTarea = async(req,res, next) => {
     try{
         const tarea = await prisma.tarea.create({
             data:{
@@ -26,7 +26,7 @@ const createTarea = async(req,res, next) => {
     }
 }
 
-const uptadeTrea = async(req,res,next) => {
+export const updateTarea = async(req,res,next) => {
     
     
     try{
@@ -61,7 +61,7 @@ const uptadeTrea = async(req,res,next) => {
     }
 }
 
-const deleteTrea = async(req,res,next) => {
+export const deleteTarea = async(req,res,next) => {
     const id = ParseInt(req.params.id);
 
     try{
