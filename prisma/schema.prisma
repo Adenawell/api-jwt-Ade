@@ -24,7 +24,6 @@ model usuario {
 model Tarea {
   id          Int      @id @default(autoincrement())
   titulo      String
-  descripcion String
   completada  Boolean  @default(false)
   usuarioId   Int
   usuario     usuario  @relation(fields: [usuarioId], references: [id])

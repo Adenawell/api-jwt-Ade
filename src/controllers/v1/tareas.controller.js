@@ -1,30 +1,26 @@
-import  { prisma }  from "../../db.js";
+import { prisma } from "../../db.js";
 
-
-
-export const getTareas = async(req,res, next) => {
-    try{
+export const getTareas = async (req, res, next) => {
+    try {
         const tareas = await prisma.tarea.findMany();
         res.json(tareas);
-    }catch(error){
+    } catch (error) {
         next(error);
     }
-}
+};
 
-export const createTarea = async(req,res, next) => {
+export const createTarea = async (req, res, next) => {
     const { titulo, usuarioId } = req.body;
 
-    try{
+    try {
         const tarea = await prisma.tarea.create({
-        data:{
-            titulo,
-            usuarioId
-        }
-    })
-    res.status(201).json(tarea)
-
-    }catch(error){
+            data: {
+                titulo,
+                usuarioId
+            }
+        });
+        res.status(201).json(tarea);
+    } catch (error) {
         next(error);
     }
-
-}
+};
