@@ -4,7 +4,7 @@ import v1TareasRoutes from "./routes/v1/tareas.routes.js";
 import v2TareasRoutes from "./routes/v2/tareas.routes.js";
 import authRoutes from "./routes/auth.routes.js";
 import { apikeyMiddleware } from "./middlewares/apikey.middleware.js";
-import { authMiddleware } from "./middlewares/authmiddleware.js";
+import { verificarToken } from "./middlewares/authmiddleware.js";
 
 const app = express();
 app.use(express.json());
@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use("/auth", authRoutes);
 app.use("/v1/tareas", apikeyMiddleware, v1TareasRoutes);
-app.use("/v2/tareas", authMiddleware, v2TareasRoutes);
+app.use("/v2/tareas", verificarToken, v2TareasRoutes);
 
 const errorHandler = (err, req, res, next) => {
     console.error(err.message);

@@ -30,7 +30,7 @@ export const updateTarea = async(req,res,next) => {
     
     
     try{
-        const id = ParseInt(req.params.id);
+        const id = parseInt(req.params.id);
         
         if(!id){
             return res.status(400).json({error: "ID de tarea inválido"});
@@ -62,7 +62,7 @@ export const updateTarea = async(req,res,next) => {
 }
 
 export const deleteTarea = async(req,res,next) => {
-    const id = ParseInt(req.params.id);
+    const id = parseInt(req.params.id);
 
     try{
 
